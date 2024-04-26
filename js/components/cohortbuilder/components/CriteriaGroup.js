@@ -1,5 +1,6 @@
 define([
-		'knockout',
+                'knockout',
+                "appConfig",
 		'../CriteriaTypes',
 		'../CriteriaGroup',
 		'../InputTypes/Window',
@@ -11,7 +12,7 @@ define([
 		'components/DropDownMenu',
 		'components/from-reusables-modal/from-reusables-modal',
 		'less!./CriteriaGroup.less'],
-	function (ko, criteriaTypes, CriteriaGroup, Window, AdditionalCriteria, options, utils, constants, template) {
+       function (ko, config, criteriaTypes, CriteriaGroup, Window, AdditionalCriteria, options, utils, constants, template) {
 
 	function CriteriaGroupViewModel(params) {
 		const self = this;
@@ -249,6 +250,28 @@ define([
 				}
 			},
 		];
+
+		// Remove anything not in the config.cohortInclusionCriteriaToShow unless it is empty
+		console.log(`config.cohortInclusionCriteriaToShow: ${config.cohortInclusionCriteriaToShow}`);
+		if (config.cohortInclusionCriteriaToShow !== []){
+		    var toKeep = []; 
+		    for (var i=0; i < self.addActions.length; i++){
+			console.log(`self.addActions element title: ${'title' in self.addActions[i] ?  self.addActions[i].title : 'no title'}`);
+			var flg = false;
+			for (var j=0; j < config.cohortInclusionCriteriaToShow.length; j++){
+			    var titStr = `const.eventsList.add${config.cohortInclusionCriteriaToShow[j]}.title`;
+			    console.log(`titStr: ${titStr}`);
+			    if (self.addActions[i].title === titStr){
+				flg = true;
+			    }
+			}
+			if (flg === true){
+			    console.log(`${self.addActions[i].title} will be kept!`);
+			    toKeep.push(self.addActions[i]);
+			}
+		    }
+		    self.addActions = toKeep;		
+		}
 
 		self.removeCriteria = function (observableList, data) {
 			observableList.remove(data);
