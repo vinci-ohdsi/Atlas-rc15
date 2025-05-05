@@ -42,7 +42,28 @@ define(
 				this.evidencePriority = 0;
 				this.vocabularyPriority = 0;
 				this.densityPriority = 0;
+
 				this.router = router;
+				console.log(`config.appsToShow: ${config.appsToShow}`);
+				if (config.appsToShow !== []){
+				    var toKeep = [];
+				    for (var i=0; i<router.pages.length; i++){
+					console.log(`router page: ${ko.unwrap(router.pages[i].title)}`);
+					
+					var flg = false;
+					for (var j=0; j < config.appsToShow.length; j++){
+					    if (ko.unwrap(router.pages[i].title) === config.appsToShow[j]){
+						flg = true;
+					    }
+					}
+					if (flg === true){
+					    console.log(`${ko.unwrap(router.pages[i].title)} will be kept!`);
+					    toKeep.push(router.pages[i]);
+					}
+				    }
+				    this.router.pages = toKeep;		
+				}
+			    
 				this.EventBus = EventBus;
 				const bemHelper = new BemHelper('app');
 				this.classes = bemHelper.run.bind(bemHelper);
