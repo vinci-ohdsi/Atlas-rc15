@@ -253,22 +253,22 @@ define([
 
 		// Remove anything not in the config.cohortInclusionCriteriaToShow unless it is empty
 		console.log(`config.cohortInclusionCriteriaToShow: ${config.cohortInclusionCriteriaToShow}`);
-		if (config.cohortInclusionCriteriaToShow !== []){
+		if (config.cohortInclusionCriteriaToShow != 'Show All'){
 		    var toKeep = []; 
-		    for (var i=0; i < self.addActions.length; i++){
-			console.log(`self.addActions element title: ${'title' in self.addActions[i] ?  self.addActions[i].title : 'no title'}`);
-			var flg = false;
-			for (var j=0; j < config.cohortInclusionCriteriaToShow.length; j++){
-			    var titStr = `const.eventsList.add${config.cohortInclusionCriteriaToShow[j]}.title`;
-			    console.log(`titStr: ${titStr}`);
-			    if (self.addActions[i].title === titStr){
-				flg = true;
-			    }
-			}
-			if (flg === true){
-			    console.log(`${self.addActions[i].title} will be kept!`);
-			    toKeep.push(self.addActions[i]);
-			}
+		    for (var i=0; i < self.addActions.length; i++){				
+				console.log(`self.addActions element title: ${'title' in self.addActions[i] ?  self.addActions[i].title : 'no title'}`);
+				var flg = false;
+				for (var j=0; j < config.cohortInclusionCriteriaToShow.length; j++){
+					var titStr = `const.eventsList.add${config.cohortInclusionCriteriaToShow[j]}.title`;
+					console.log(`titStr: ${titStr}`);
+					if (self.addActions[i].title === titStr){
+					flg = true;
+					}
+				}
+				if (flg === true || self.addActions[i].title == 'const.eventsList.fromReusable.title'){
+					console.log(`${self.addActions[i].title} will be kept!`);
+					toKeep.push(self.addActions[i]);
+				}
 		    }
 		    self.addActions = toKeep;		
 		}
