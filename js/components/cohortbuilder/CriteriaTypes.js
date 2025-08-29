@@ -118,4 +118,4 @@ define(function (require, exports) {
 	
 	exports.GetCriteriaFromObject = GetCriteriaFromObject;
 
-});
+};
