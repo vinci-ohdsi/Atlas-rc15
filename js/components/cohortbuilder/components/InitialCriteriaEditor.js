@@ -1,6 +1,7 @@
 define([
     "knockout",
     "../options",
+    "appConfig",
     "../CriteriaGroup",
     "../CriteriaTypes",
     "../CohortExpression",
@@ -11,6 +12,7 @@ define([
 ], function (
     ko,
     options,
+    config,
     CriteriaGroup,
     criteriaTypes,
     CohortExpression,
@@ -258,7 +260,30 @@ define([
                 }
             },
         ];
-
+	// Remove anything not in the config.cohortEntryAttrToShow unless it is empty
+	console.log(`config.cohortEntryAttrToShow: ${config.cohortEntryAttrToShow}`);
+	if (config.cohortEntryAttrToShow != 'Show All'	){
+	    var toKeep = []; 
+	    for (var i=0; i < self.primaryCriteriaOptions.length; i++){
+			console.log(`self.primaryCriteriaOptions : ${self.primaryCriteriaOptions[i]}`);
+			console.log(`self.primaryCriteriaOptions element title: ${'title' in self.primaryCriteriaOptions[i] ?  self.primaryCriteriaOptions[i].title : 'no title'}`);
+			var flg = false;
+			for (var j=0; j < config.cohortEntryAttrToShow.length; j++){
+				var titStr = `const.eventsList.add${config.cohortEntryAttrToShow[j]}.title`;
+				console.log(`titStr: ${titStr}`);
+				if (self.primaryCriteriaOptions[i].title === titStr){
+				flg = true;
+				}
+			}
+			if (flg === true || self.primaryCriteriaOptions[i].title == 'const.eventsList.fromReusable.title'){
+				console.log(`${self.primaryCriteriaOptions[i].title} will be kept!`);
+				toKeep.push(self.primaryCriteriaOptions[i]);
+			}
+	    }
+	    self.primaryCriteriaOptions = toKeep;	    
+	}
+	
+	
         self.removePrimaryCriteria = function (criteria) {
             ko.utils.unwrapObservable(self.expression).PrimaryCriteria().CriteriaList.remove(criteria);
         };

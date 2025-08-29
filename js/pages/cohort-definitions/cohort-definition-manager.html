@@ -71,6 +71,14 @@
 				<a data-bind="text: ko.i18n('cohortDefinitions.cohortDefinitionManager.tabs.conceptSets', 'Concept Sets')"></a>
 			</li>
 
+			<li role="presentation" 
+			    data-bind="css: { active: $component.tabMode() === 'warnings' }, click: function(){ $component.selectTab('warnings'); } ">
+				<a>
+					<span data-bind="text: ko.i18n('cohortDefinitions.cohortDefinitionManager.tabs.messages', 'Messages')"></span>
+					<!-- ko component: { name: 'warnings-badge', params: warningParams() } --> <!-- /ko -->
+				</a>
+			</li>
+			
 			<li role="presentation"
 				data-bind="visible: !previewVersion(), css: { active: $component.tabMode() == 'generation' }, click: function() { $component.selectTab('generation'); }">
 				<a data-bind="text: ko.i18n('cohortDefinitions.cohortDefinitionManager.tabs.generation', 'Generation')"></a>
@@ -98,12 +106,7 @@
 			<li role="presentation" data-bind="css: { active: $component.tabMode() == 'versions' }, click: () => { $component.selectTab('versions'); }">
 				<a data-bind="text: ko.i18n('cohortDefinitions.cohortDefinitionManager.tabs.versions', 'Versions')"></a>
 			</li>
-			<li role="presentation" data-bind="css: { active: $component.tabMode() === 'warnings' }, click: function(){ $component.selectTab('warnings'); } ">
-				<a>
-					<span data-bind="text: ko.i18n('cohortDefinitions.cohortDefinitionManager.tabs.messages', 'Messages')"></span>
-					<!-- ko component: { name: 'warnings-badge', params: warningParams() } --> <!-- /ko -->
-				</a>
-			</li>
+			
 		</ul>
 		<div class="tab-content">
 			<div role="tabpanel" data-bind="css: { active: $component.tabMode() == 'definition' }" class="tab-pane">
@@ -326,12 +329,17 @@
 										: ko.i18n('cohortDefinitions.cohortDefinitionManager.panels.viewReports', 'View Reports'))"></span>
 							</div>
 						</td>
-					</tr>
+					</tr> 
 					</tbody>
-				</table>
+				</table>	
 				<!-- ko if: selectedReportSource() -->
 				<cohort-reports params="cohort: currentCohortDefinition, source: selectedReportSource, infoSelected: selectedReportSource"></cohort-reports>
 				<!-- /ko -->
+				<div>
+				 <H4>Messages:</H4>
+				 <p><b>Information, warnings, and errors for this cohort definition</b></p>	
+				 <div data-bind="component: { name: 'warnings', params: $component.warningParams }"></div>
+				</div>
 			</div>
 			<div role="tabpanel" data-bind="css: { active: $component.tabMode() == 'reporting' }" class="tab-pane">
 				<div class="pad-5">
