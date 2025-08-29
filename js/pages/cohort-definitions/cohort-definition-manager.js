@@ -1682,7 +1682,9 @@ define(['jquery', 'knockout', 'text!./cohort-definition-manager.html',
 			else if (data.hasOwnProperty("Death"))
 				return "death-criteria-viewer";
 			else if (data.hasOwnProperty("LocationRegion"))
-				return "location-region-viewer";
+ 			        return "location-region-viewer";
+			else if (data.hasOwnProperty("CareSite"))
+				return "care-site-viewer";		    
 			else
 				return "unknownCriteriaType";
 		};

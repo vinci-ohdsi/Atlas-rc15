@@ -137,6 +137,19 @@ define([
 					}, unwrappedExpression.ConceptSets));
 				}
 			},
+		        {
+				...constants.groupAttributes.addCareSite,
+				selected: false,
+				action: function () {
+					var unwrappedExpression = ko.utils.unwrapObservable(self.expression);
+					self.group().CriteriaList.push(new AdditionalCriteria({
+						Criteria: {
+							CareSite: {}
+						},
+						IgnoreObservationPeriod: true,
+					}, unwrappedExpression.ConceptSets));
+				}
+			},
 			{
 				...constants.groupAttributes.addMeasurement,
 				selected: false,
@@ -281,7 +294,8 @@ define([
 				case "dose-era-criteria":
 				case "observation-period-criteria":
 				case "specimen-criteria":
-				case "location-region-criteria":
+			        case "location-region-criteria":
+			        case "care-site-criteria":
 					return false;
 					break;
 				default:

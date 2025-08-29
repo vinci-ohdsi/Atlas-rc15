@@ -78,20 +78,23 @@ define(function (require, exports) {
 			return {
 				Specimen: new exports.Specimen(data.Specimen, conceptSets)
 			};		
-		}	else if (data.hasOwnProperty("Death")) {
+		} else if (data.hasOwnProperty("Death")) {
 			return {
 				Death: new exports.Death(data.Death, conceptSets)
 			};
-		}	else if (data.hasOwnProperty("PayerPlanPeriod")) {
+		} else if (data.hasOwnProperty("PayerPlanPeriod")) {
 			return {
 				PayerPlanPeriod: new exports.PayerPlanPeriod(data.PayerPlanPeriod, conceptSets)
 			};
-		}	else if (data.hasOwnProperty("LocationRegion")) {
+		} else if (data.hasOwnProperty("LocationRegion")) {
 			return {
 				LocationRegion: new exports.LocationRegion(data.LocationRegion, conceptSets)
 			};
-		};
-	}
+		} else if (data.hasOwnProperty("CareSite")) {
+			return {
+				CareSite: new exports.CareSite(data.CareSite, conceptSets)
+			};
+	        }
 	
 	exports.ConditionOccurrence = ConditionOccurrence;
 	exports.ConditionEra = ConditionEra;
@@ -110,6 +113,7 @@ define(function (require, exports) {
 	exports.DemographicCriteria = DemographicCriteria;
 	exports.PayerPlanPeriod = PayerPlanPeriod;
 	exports.LocationRegion = LocationRegion;
+	exports.CareSite = CareSite;    
 	
 	exports.GetCriteriaFromObject = GetCriteriaFromObject;
 

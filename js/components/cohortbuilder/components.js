@@ -96,7 +96,10 @@ define(function (require, exports) {
 	ko.components.register('payer-plan-period-criteria', payerPlanPeriod);
 
 	var locationRegion = require('./components/LocationRegion');
-	ko.components.register('location-region-criteria', locationRegion);
+        ko.components.register('location-region-criteria', locationRegion);
+
+        var careSite = require('./components/CareSite');
+	ko.components.register('care-site-criteria', careSite);
 
 	require('./components/WindowedCriteria');
 	

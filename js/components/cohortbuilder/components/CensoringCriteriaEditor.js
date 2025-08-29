@@ -241,8 +241,10 @@ define([
                 return "condition-era-criteria";
             else if (data.hasOwnProperty("DrugExposure"))
                 return "drug-exposure-criteria";
-            else if (data.hasOwnProperty("DrugEra")) return "drug-era-criteria";
-            else if (data.hasOwnProperty("DoseEra")) return "dose-era-criteria";
+            else if (data.hasOwnProperty("DrugEra"))
+		return "drug-era-criteria";
+            else if (data.hasOwnProperty("DoseEra"))
+		return "dose-era-criteria";
             else if (data.hasOwnProperty("ProcedureOccurrence"))
                 return "procedure-occurrence-criteria";
             else if (data.hasOwnProperty("Observation"))
@@ -255,14 +257,18 @@ define([
                 return "device-exposure-criteria";
             else if (data.hasOwnProperty("Measurement"))
                 return "measurement-criteria";
-            else if (data.hasOwnProperty("Specimen")) return "specimen-criteria";
+            else if (data.hasOwnProperty("Specimen"))
+		return "specimen-criteria";
             else if (data.hasOwnProperty("ObservationPeriod"))
                 return "observation-period-criteria";
             else if (data.hasOwnProperty("PayerPlanPeriod"))
                 return "payer-plan-period-criteria";
-            else if (data.hasOwnProperty("Death")) return "death-criteria";
+            else if (data.hasOwnProperty("Death"))
+		return "death-criteria";
             else if (data.hasOwnProperty("LocationRegion"))
                 return "location-region-criteria";
+            else if (data.hasOwnProperty("CareSite"))
+                return "care-site-criteria";	    
             else return "unknownCriteriaType";
         };
 

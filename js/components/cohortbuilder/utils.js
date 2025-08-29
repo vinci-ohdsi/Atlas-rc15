@@ -35,9 +35,11 @@ function(
 		else if (data.hasOwnProperty("Death"))
 			return "death-criteria";
 		else if (data.hasOwnProperty("LocationRegion"))
-			return "location-region-criteria";
-		else
-			return "unknown-criteria";
+		        return "location-region-criteria";
+	        else if (data.hasOwnProperty("CareSite"))
+			return "care-site-criteria";
+	        else
+		        return "unknown-criteria";
 	}
 
 	function formatDropDownOption(option) {
