@@ -27,6 +27,21 @@ define([
         self.buttonText = params.buttonText || ko.i18n('components.cohortExpressionEditor.addInitialEvent', 'Add Initial Event');
 
         self.primaryCriteriaOptions = [
+	    {
+                ...constants.initialEventList.addCareSite,
+                selected: false,
+                action: function () {
+                    var unwrappedExpression = ko.utils.unwrapObservable(self.expression);
+                    unwrappedExpression
+                        .PrimaryCriteria()
+                        .CriteriaList.push({
+                        CareSite: new criteriaTypes.CareSite(
+                            null,
+                            unwrappedExpression.ConceptSets
+                        ),
+                    });
+                },
+            },
             {
                 ...constants.initialEventList.addConditionEra,
                 selected: false,
@@ -270,7 +285,8 @@ define([
 			var flg = false;
 			for (var j=0; j < config.cohortEntryAttrToShow.length; j++){
 				var titStr = `const.eventsList.add${config.cohortEntryAttrToShow[j]}.title`;
-				console.log(`titStr: ${titStr}`);
+			        // UNCOMMENT TO DEBUG:
+			        console.log(`titStr: ${titStr}`);
 				if (self.primaryCriteriaOptions[i].title === titStr){
 				flg = true;
 				}
