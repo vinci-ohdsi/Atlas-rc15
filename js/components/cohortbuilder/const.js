@@ -1301,6 +1301,8 @@ define(["knockout"], function (ko) {
     addCareSite: {
       title: 'const.eventsList.addCareSite.title',
       defaultTitle: 'Add Care Site',
+      descriptionInitial: 'const.eventsList.addCareSite.desc_initial',
+      defaultDescriptionInitial: 'Find patients who received care from one or more specific care sites.',
       descriptionGroup: 'const.eventsList.addCareSite.desc_group',
       defaultDescriptionGroup: 'Find patients who received care from one or more specific care sites.',
     },
