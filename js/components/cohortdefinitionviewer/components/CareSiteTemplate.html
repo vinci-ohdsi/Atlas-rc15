@@ -1,0 +1,19 @@
+<!-- ko with: Criteria -->
+<span data-bind="text: ko.i18n('components.careSite.criteria.of', 'a care site from the care_site_history table')"></span>
+<conceptset-reference params="{conceptSetId: CodesetId, conceptSets: $component.expression.ConceptSets, defaultName: ko.i18n('components.careSite.anyCareSite', 'Any Care Site from the care_site_history table')}"></conceptset-reference>
+<ul>
+<!-- ko if: ko.utils.unwrapObservable(StartDate) != null -->
+	<li>
+		<span data-bind="text: ko.i18n('components.careSite.criteria.startDate.text', 'start is')"></span>
+		 <date-range-viewer params="Range: StartDate"></date-range-viewer></li>
+<!-- /ko -->
+<!-- ko if: ko.utils.unwrapObservable(EndDate) != null -->
+	<li>
+		<span data-bind="text: ko.i18n('components.careSite.criteria.endDate.text', 'end is')"></span>
+	 <date-range-viewer params="Range: EndDate"></date-range-viewer></li>
+<!-- /ko -->
+<!-- ko if: ko.utils.unwrapObservable(CorrelatedCriteria) != null -->
+		<criteria-group-viewer params="{expression: $component.expression, group: CorrelatedCriteria}"></criteria-group-viewer>	
+<!-- /ko -->
+</ul>
+<!-- /ko -->
