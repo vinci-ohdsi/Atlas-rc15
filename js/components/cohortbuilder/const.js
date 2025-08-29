@@ -1,6 +1,14 @@
 define(["knockout"], function (ko) {
 
   const criteria = {
+    addCareSite: {
+      title: 'const.eventsList.addCareSite.title',
+      defaultTitle: 'Add Care Site',
+      descriptionInitial: 'const.eventsList.addCareSite.desc_initial',
+      defaultDescriptionInitial: 'Find patients who received care from one or more specific care sites.',
+      descriptionGroup: 'const.eventsList.addCareSite.desc_group',
+      defaultDescriptionGroup: 'Find patients who received care from one or more specific care sites.',
+    },
     addConditionEra: {
       title: 'const.eventsList.addConditionEra.title',
       defaultTitle: 'Add Condition Era',
@@ -1297,14 +1305,6 @@ define(["knockout"], function (ko) {
       defaultTitle: 'Add Location Region',
       descriptionGroup: 'const.eventsList.addLocationRegion.desc_group',
       defaultDescriptionGroup: 'Find patients within geographical area.',
-    },
-    addCareSite: {
-      title: 'const.eventsList.addCareSite.title',
-      defaultTitle: 'Add Care Site',
-      descriptionInitial: 'const.eventsList.addCareSite.desc_initial',
-      defaultDescriptionInitial: 'Find patients who received care from one or more specific care sites.',
-      descriptionGroup: 'const.eventsList.addCareSite.desc_group',
-      defaultDescriptionGroup: 'Find patients who received care from one or more specific care sites.',
     },
     addVisitCS: {
       titleOccurrence: 'const.eventsList.addVisitCS.title_occurrence',
