@@ -286,7 +286,7 @@ define([
 			for (var j=0; j < config.cohortEntryAttrToShow.length; j++){
 				var titStr = `const.eventsList.add${config.cohortEntryAttrToShow[j]}.title`;
 			        // UNCOMMENT TO DEBUG:
-			        console.log(`titStr: ${titStr}`);
+			        //console.log(`titStr: ${titStr}`);
 				if (self.primaryCriteriaOptions[i].title === titStr){
 				flg = true;
 				}
