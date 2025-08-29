@@ -16,7 +16,8 @@ define(function (require, exports) {
 	var Death = require("./CriteriaTypes/Death");
 	var DemographicCriteria = require("./CriteriaTypes/DemographicCriteria");
 	var PayerPlanPeriod = require("./CriteriaTypes/PayerPlanPeriod");
-	var LocationRegion = require("./CriteriaTypes/LocationRegion");
+        var LocationRegion = require("./CriteriaTypes/LocationRegion");
+        var CareSite = require("./CriteriaTypes/CareSite");
 	
 	function GetCriteriaFromObject (data, conceptSets)
 	{
