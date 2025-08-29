@@ -1353,6 +1353,7 @@ define(["knockout"], function (ko) {
   }
 
   const initialEventList = [
+    'addCareSite',
     'addConditionEra',
     'addConditionOccurrence',
     'addDeath',
