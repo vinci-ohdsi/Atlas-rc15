@@ -96,7 +96,7 @@ define(function (require, exports) {
 				CareSite: new exports.CareSite(data.CareSite, conceptSets)
 			};
 	        }
-	
+	}	
 	exports.ConditionOccurrence = ConditionOccurrence;
 	exports.ConditionEra = ConditionEra;
 	exports.DrugExposure = DrugExposure;
@@ -118,4 +118,4 @@ define(function (require, exports) {
 	
 	exports.GetCriteriaFromObject = GetCriteriaFromObject;
 
-};
+});
