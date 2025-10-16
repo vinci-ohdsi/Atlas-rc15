@@ -6,7 +6,11 @@
 		<div data-bind="html: ko.i18n('home.description', 'ATLAS is an open source application developed as a part of <a href=\'http://www.ohdsi.org\' target=\'_new\'>OHDSI</a> intended to provide a unified interface to patient level data and analytics.')"></div>
 	</div>
 	<div class="home-documentation">
-		<div class="heading" data-bind="text: ko.i18n('home.documentation.title', 'Documentation')"></div>
+		<div class="heading" data-bind="text: ko.i18n('home.documentation.vinci.title', 'VINCI Documentation')"></div>
+		<a target ="_new" href=""><i class="fa fa-fw fa-3x fa-video" aria-hidden="true"></i></a>&nbsp; VINCI training: <span><a target="_new" href="https://dvagov-my.sharepoint.com/:v:/r/personal/richard_boyce1_va_gov/Documents/Atlas_WebAPI-get-SNOMED-from-ICD.webm?csf=1&web=1&e=E0BYsR">How to create a concept set of SNOMED codes starting from ICD codes</a></span>		
+	</div>
+	<div class="home-documentation">
+        <div class="heading" data-bind="text: ko.i18n('home.documentation.ohdsi.title', 'OHDSI Documentation')"></div>	
 		<a target="_new" href="http://www.ohdsi.org/web/wiki/doku.php?id=documentation:software:atlas"><i class="fa fa-fw fa-3x fa-book" aria-hidden="true"></i></a><span data-bind="html: ko.i18n('home.documentation.text', 'The ATLAS user guide can be found <a target=\'_new\' href=\'http://www.ohdsi.org/web/wiki/doku.php?id=documentation:software:atlas\'>here</a>.')"></span>
 	</div>
 
@@ -21,7 +25,7 @@
 			<span data-bind="text: ko.i18n('home.gettingStarted.vocabulary.description', 'Search the different ontologies used to describe patient level data around the world')"></span>
 		</div>
 	</div>
-
+<!-- 
 	<div class="heading" data-bind="text: ko.i18n('home.releaseNotes.title', 'Release Notes')"></div>
 	<div class="release-notes">
 		<div class="paddedWrapper">
@@ -43,5 +47,5 @@
 			</div>
 		</div>
 	</div>
-	<loading data-bind="visible: loading" params="status: ko.i18n('home.releaseNotes.loadingReleaseInfo', 'Loading release info')"></loading>
+	<loading data-bind="visible: loading" params="status: ko.i18n('home.releaseNotes.loadingReleaseInfo', 'Loading release info')"></loading> -->
 </div>
