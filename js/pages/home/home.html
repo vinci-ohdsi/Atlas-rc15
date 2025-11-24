@@ -3,13 +3,16 @@
 <div class="paddedWrapper">
 	<div class="home-welcome">
 		<div class="heading" data-bind="text: ko.i18n('home.welcome', 'Welcome to ATLAS.')"></div>
-		<div data-bind="html: ko.i18n('home.description', 'ATLAS is an open source application developed as a part of <a href=\'http://www.ohdsi.org\' target=\'_new\'>OHDSI</a> intended to provide a unified interface to patient level data and analytics.')"></div>
+		<div data-bind="html: ko.i18n('home.description.a', 'VINCI Atlas is a special version of the open source application Atlas developed as a part of <a href=\'http://www.ohdsi.org\' target=\'_new\'>OHDSI</a>')"></div>
+		<div data-bind="html: ko.i18n('home.description.b', 'that provides many features that accelerate research with the <a href=\'https://cipherwiki.va.gov/phenotype/index.php?title=OMOP:Observational_Medical_Outcomes_Partnership_(OMOP)\' target=\'_new\'>OMOP version</a> of <a href=\'https://dvagov.sharepoint.com/sites/oitbisl/SitePages/BISLHome.aspx\' target=\'_new\'>VA CDW</a>.')"></div>
 	</div>
 	<div class="home-documentation">
 		<div class="heading" data-bind="text: ko.i18n('home.documentation.vinci.title', 'VINCI Documentation')"></div>
-		<a target="_new" href=''><i class="fa fa-fw fa-3x fa-solid fa-file" aria-hidden="true"></i></a>&nbsp;<span data-bind="html: ko.i18n('home.documentation.vinci.cdw_omop_diff', 'Know what <a target=\'_new\' href=\'\'>is different about CDW in OMOP</a>')"></span>		
+		<a target="_new" href=''><i class="fa fa-fw fa-3x fa-solid fa-file" aria-hidden="true"></i></a>&nbsp;<span data-bind="html: ko.i18n('home.documentation.vinci.cdw_omop_diff', 'Learn how how VINCI Atlas can <a href=\'\' target=\'_new\'>accelerate your VA research</a> and how <a target=\'_new\' href=\'\'>CDW OMOP compares with CDW</a>')"></span>
 		<br><br>
-		<a target ="_new" href=""><i class="fa fa-fw fa-3x fa-video" aria-hidden="true"></i></a>&nbsp;<span>CDW in OMOP uses SNOMED codes for conditions so, <a target="_new" href="https://dvagov-my.sharepoint.com/:v:/r/personal/richard_boyce1_va_gov/Documents/Atlas_WebAPI-get-SNOMED-from-ICD.webm?csf=1&web=1&e=E0BYsR">how do I go from ICD to SNOMED?</a></span>
+        <a target="_new" href=''><i class="fa fa-fw fa-3x fa-video" aria-hidden="true"></i></a>&nbsp;<span data-bind="html: ko.i18n('home.documentation.vinci.cdw_omop', 'An overview of <a href=\'https://cipherwiki.va.gov/phenotype/index.php?title=OMOP:Observational_Medical_Outcomes_Partnership_(OMOP)\' target=\'_new\'>CDW OMOP</a>')"></span>				
+		<br><br>
+		<a target ="_new" href=""><i class="fa fa-fw fa-3x fa-video" aria-hidden="true"></i></a>&nbsp;<span>CDW OMOP uses SNOMED codes for conditions so, <a target="_new" href="https://dvagov-my.sharepoint.com/:v:/r/personal/richard_boyce1_va_gov/Documents/Atlas_WebAPI-get-SNOMED-from-ICD.webm?csf=1&web=1&e=E0BYsR">how do I go from ICD to SNOMED?</a></span>
 		<br><br>
 		<a target ="_new" href=""><i class="fa fa-fw fa-3x fa-video" aria-hidden="true"></i></a>&nbsp;<span><a target="_new" href="">Use of Atlas to accelerate research feasibility exploration</a></span>
 		<br><br>
