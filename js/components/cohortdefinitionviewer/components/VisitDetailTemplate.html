@@ -84,11 +84,13 @@
 			defaultName: ko.i18n('components.cohortCriteria.anyPlaceOfService', 'Any Place of Service')"></conceptset-reference>
 	</li>
 	<!-- /ko -->	 
-	<!-- ko if: PlaceOfServiceLocation() != null -->
-	<li>
-		<span data-bind="text: ko.i18n('components.conditionVisitDetail.conditionVisitDetailText_11', 'with a Place of Service located in:')"></span>
-		<conceptset-reference params="conceptSetId: PlaceOfServiceLocation(), conceptSets: $component.expression.ConceptSets, 
-			defaultName: ko.i18n('components.conditionVisitDetail.anyLocation', 'Any Location')"></conceptset-reference>
+	<!-- ko if: PlaceOfServiceLocationCS() != null -->
+	<li>		
+		<span data-bind="text: ko.i18n('components.cohortCriteria.placeOfServiceLocationCS', 'with a place of service location concept')"></span>
+		<cycle-toggle-input-viewer params="{value: PlaceOfServiceLocationCS().IsExclusion, options: $component.options.DomainTypeExcludeOptions}"></cycle-toggle-input-viewer>
+		<conceptset-reference params="conceptSetId: PlaceOfServiceLocationCS().CodesetId, 
+			conceptSets: $component.expression.ConceptSets, 
+			defaultName: ko.i18n('components.cohortCriteria.anyPlaceOfServiceLocation', 'Any Place of Service Location')"></conceptset-reference>
 	</li>
 	<!-- /ko -->
 <!-- ko if: ko.utils.unwrapObservable(CorrelatedCriteria) != null -->

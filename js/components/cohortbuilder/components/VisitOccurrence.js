@@ -134,30 +134,21 @@ define([
         },
       },
       {
-        ...constants.visitAttributes.addPlaceService,
-        selected: false,
-        action: function () {
-          if (self.Criteria.PlaceOfService() == null)
-            self.Criteria.PlaceOfService(ko.observableArray());
-        },
-      },
-      {
         ...constants.visitAttributes.addPlaceServiceCS,
         selected: false,
         action: function () {
           if (self.Criteria.PlaceOfServiceCS() == null)
             self.Criteria.PlaceOfServiceCS(new ConceptSetSelection({}, self.expression.ConceptSets));
         },
-      },
+      },  
       {
-        ...constants.visitAttributes.addPlaceServiceLocation,
+        ...constants.visitAttributes.addPlaceServiceLocationCS,
         selected: false,
         action: function () {
-          if (self.Criteria.PlaceOfServiceLocation() == null) {
-            self.Criteria.PlaceOfServiceLocation(ko.observable());
-          }
+          if (self.Criteria.PlaceOfServiceLocationCS() == null)
+            self.Criteria.PlaceOfServiceLocationCS(new ConceptSetSelection({}, self.expression.ConceptSets));
         },
-      },
+      }, 	
       {
         ...constants.visitAttributes.addNested,
         selected: false,

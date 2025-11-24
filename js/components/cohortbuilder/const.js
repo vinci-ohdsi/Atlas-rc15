@@ -998,14 +998,20 @@ define(["knockout"], function (ko) {
       descriptionVisitdetail: 'const.eventsList.addPlaceServiceCS.desc_visitDetail',
       defaultDescriptionVisitdetail: 'Filter Visit detail based on Place of Service.',
     },
-    addPlaceServiceLocation: {
+	addPlaceServiceLocation: {
       titleVisit: 'const.eventsList.addPlaceServiceLocation.title_visit',
       defaultTitleVisit: 'Add Place of Service Location Criteria',
       descriptionVisit: 'const.eventsList.addPlaceServiceLocation.desc_visit',
+      defaultDescriptionVisit: 'Filter Visit Occurrences based on Place of Service Location.',
+    },
+    addPlaceServiceLocationCS: {
+      titleVisit: 'const.eventsList.addPlaceServiceLocationCS.title_visit',
+      defaultTitleVisit: 'Add Place of Service Location Concept Set Criteria',
+      descriptionVisit: 'const.eventsList.addPlaceServiceLocationCS.desc_visit',
       defaultDescriptionVisit: 'Filter Visit Occurrences based on where Place of Service is located.',
-      titleVisitdetail: 'const.eventsList.addPlaceServiceLocation.title_visitDetail',
-      defaultTitleVisitdetail: 'Add Place of Service Location Criteria',
-      descriptionVisitdetail: 'const.eventsList.addPlaceServiceLocation.desc_visitDetail',
+      titleVisitdetail: 'const.eventsList.addPlaceServiceLocationCS.title_visitDetail',
+      defaultTitleVisitdetail: 'Add Place of Service Location Concept Set Criteria',
+      descriptionVisitdetail: 'const.eventsList.addPlaceServiceLocationCS.desc_visitDetail',
       defaultDescriptionVisitdetail: 'Filter Visit detail based on where Place of Service is located.',
     },
     addPlaceServiceDistance: {
@@ -1672,6 +1678,7 @@ define(["knockout"], function (ko) {
     'addPlaceService',
     'addPlaceServiceCS',
     'addPlaceServiceLocation',
+	'addPlaceServiceLocationCS',
     'addNested',
   ];
   const visitDetailAttributesList = [
@@ -1686,7 +1693,7 @@ define(["knockout"], function (ko) {
     'addSourceConcept',
     'addProviderSpecialtyCS',
     'addPlaceServiceCS',
-    'addPlaceServiceLocation',
+    'addPlaceServiceLocationCS',
     'addNested',
   ];
   const demographicAttributesList = [

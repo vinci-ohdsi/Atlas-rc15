@@ -38,8 +38,8 @@ define(['knockout', './Criteria', '../InputTypes/Range', '../InputTypes/ConceptS
 		self.GenderCS = ko.observable(data.GenderCS && new ConceptSetSelection(data.GenderCS, conceptSets));
 		self.ProviderSpecialtyCS = ko.observable(data.ProviderSpecialtyCS && new ConceptSetSelection(data.ProviderSpecialtyCS, conceptSets));
 		self.PlaceOfServiceCS = ko.observable(data.PlaceOfServiceCS && new ConceptSetSelection(data.PlaceOfServiceCS, conceptSets));
-
-		self.PlaceOfServiceLocation = ko.observable(data.PlaceOfServiceLocation != null ? ko.observable(data.PlaceOfServiceLocation) : null);
+		self.PlaceOfServiceLocationCS = ko.observable(data.PlaceOfServiceLocationCS && new ConceptSetSelection(data.PlaceOfServiceLocationCS, conceptSets));
+		
 		self.PlaceOfServiceDistance = ko.observable(data.PlaceOfServiceDistance && new Range(data.PlaceOfServiceDistance));
 	}
 

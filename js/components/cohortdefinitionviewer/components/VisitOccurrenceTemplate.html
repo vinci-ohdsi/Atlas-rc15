@@ -96,10 +96,14 @@
 			defaultName: ko.i18n('components.cohortCriteria.anyPlaceOfService', 'Any Place of Service')"></conceptset-reference>
 </li>
 <!-- /ko -->
-<!-- ko if: ko.utils.unwrapObservable(PlaceOfServiceLocation) != null -->
+<!-- ko if: ko.utils.unwrapObservable(PlaceOfServiceLocationCS) != null -->
 	<li>
-		<span data-bind="text: ko.i18n('components.conditionVisit.conditionSpecimeText_11', 'with a Place of Service located in:')"></span>
-		<conceptset-reference params="{conceptSetId: PlaceOfServiceLocation, conceptSets: $component.expression.ConceptSets, defaultName: 'Any region'}"></conceptset-reference></li>
+		<span data-bind="text: ko.i18n('components.cohortCriteria.placeOfServiceLocationCS', 'with a place of service location concept')"></span>
+		<cycle-toggle-input-viewer params="{value: PlaceOfServiceLocationCS().IsExclusion, options: $component.options.DomainTypeExcludeOptions}">
+		</cycle-toggle-input-viewer>
+		<conceptset-reference params="conceptSetId: PlaceOfServiceLocationCS().CodesetId, conceptSets: $component.expression.ConceptSets, 
+			defaultName: ko.i18n('components.cohortCriteria.anyPlaceOfService', 'Any Place of Service location')"></conceptset-reference>
+</li>
 <!-- /ko -->
 <!-- ko if: ko.utils.unwrapObservable(CorrelatedCriteria) != null -->
 	<criteria-group-viewer params="{expression: $component.expression, group: CorrelatedCriteria, indexMessage: $component.indexMessage}"></criteria-group-viewer>	

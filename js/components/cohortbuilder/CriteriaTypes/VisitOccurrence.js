@@ -53,8 +53,11 @@ define(['knockout', './Criteria', '../InputTypes/Range','conceptpicker/InputType
 			return new Concept(d);
 		})));
 		self.PlaceOfServiceCS = ko.observable(data.PlaceOfServiceCS && new ConceptSetSelection(data.PlaceOfServiceCS, conceptSets));
-
-		self.PlaceOfServiceLocation = ko.observable(data.PlaceOfServiceLocation != null ? ko.observable(data.PlaceOfServiceLocation) : null);
+		
+		self.PlaceOfServiceLocation = ko.observable(data.PlaceOfServiceLocation && ko.observableArray(data.PlaceOfServiceLocation.map(function (d) {
+			return new Concept(d);
+		})));		
+		self.PlaceOfServiceLocationCS = ko.observable(data.PlaceOfServiceLocationCS && new ConceptSetSelection(data.PlaceOfServiceLocationCS, conceptSets));
 	}
 
 	VisitOccurence.prototype = new Criteria();

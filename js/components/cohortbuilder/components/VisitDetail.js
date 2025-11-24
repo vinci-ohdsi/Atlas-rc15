@@ -119,11 +119,11 @@ define([
         },
       },
       {
-        ...constants.visitDetailAttributes.addPlaceServiceLocation,
+        ...constants.visitDetailAttributes.addPlaceServiceLocationCS,
         selected: false,
         action: function () {
-          if (self.Criteria.PlaceOfServiceLocation() == null) {
-            self.Criteria.PlaceOfServiceLocation(ko.observable());
+          if (self.Criteria.PlaceOfServiceLocationCS() == null) {
+            self.Criteria.PlaceOfServiceLocationCS(new ConceptSetSelection({}, self.expression.ConceptSets));
           }
         },
       },

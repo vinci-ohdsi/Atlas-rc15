@@ -264,54 +264,54 @@ define([
 				title: "MSSQL Server",
 				dialect: "sql server",
 			},
-			MSAPS: {
-				title: "MS APS",
-				dialect: "pdw",
-			},
-			ORACLE: {
-				title: "Oracle",
-				dialect: "oracle",
-			},
-			POSTGRESQL: {
-				title: "PostgreSQL",
-				dialect: "postgresql",
-			},
-			REDSHIFT: {
-				title: "Amazon Red Shift",
-				dialect: "redshift",
-			},
-			IMPALA: {
-				title: "Impala",
-				dialect: "impala",
-			},
-			NETEZZA: {
-				title: "Netezza",
-				dialect: "netezza",
-			},
-			BIGQUERY: {
-				title: "Big Query",
-				dialect: "bigquery",
-			},
-			HIVE: {
-				title: "Apache Hive",
-				dialect: "hive",
-			},
-			SPARK: {
-				title: "Spark",
-				dialect: "spark",
-			},
-			SNOWFLAKE: {
-				title: "Snowflake",
-				dialect: "snowflake",
-      		},
-			SYNAPSE: {
-				title: "Azure Synapse",
-				dialect: "synapse",
-			},
-			IRIS: {
-				title: "InterSystems IRIS",
-				dialect: "iris",
-			},
+			// MSAPS: {
+				// title: "MS APS",
+				// dialect: "pdw",
+			// },
+			// ORACLE: {
+				// title: "Oracle",
+				// dialect: "oracle",
+			// },
+			// POSTGRESQL: {
+				// title: "PostgreSQL",
+				// dialect: "postgresql",
+			// },
+			// REDSHIFT: {
+				// title: "Amazon Red Shift",
+				// dialect: "redshift",
+			// },
+			// IMPALA: {
+				// title: "Impala",
+				// dialect: "impala",
+			// },
+			// NETEZZA: {
+				// title: "Netezza",
+				// dialect: "netezza",
+			// },
+			// BIGQUERY: {
+				// title: "Big Query",
+				// dialect: "bigquery",
+			// },
+			// HIVE: {
+				// title: "Apache Hive",
+				// dialect: "hive",
+			// },
+			// SPARK: {
+				// title: "Spark",
+				// dialect: "spark",
+			// },
+			// SNOWFLAKE: {
+				// title: "Snowflake",
+				// dialect: "snowflake",
+      		// },
+			// SYNAPSE: {
+				// title: "Azure Synapse",
+				// dialect: "synapse",
+			// },
+			// IRIS: {
+				// title: "InterSystems IRIS",
+				// dialect: "iris",
+			// },
 		};
 
 		const eventTypes = {

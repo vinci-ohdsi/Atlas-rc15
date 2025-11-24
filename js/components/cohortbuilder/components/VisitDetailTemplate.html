@@ -139,15 +139,14 @@
 					</div>
 				</td>
 			</tr>
-			<tr data-bind="if: PlaceOfServiceLocation() != null, visible: PlaceOfServiceLocation() != null">
-				<td><i data-bind="click: function() { $component.removeCriterion('PlaceOfServiceLocation') }, title: ko.i18n('common.remove', 'Remove')" class="fa fa-times" /></td>
+			<tr data-bind="if: PlaceOfServiceLocationCS() != null, visible: PlaceOfServiceLocationCS() != null">
+				<td><i data-bind="click: function() { $component.removeCriterion('PlaceOfServiceLocationCS') }, title: ko.i18n('common.remove', 'Remove')" class="fa fa-times" /></td>
 				<td>
 					<div>
-						<span
-							data-bind="text: ko.i18n('components.conditionVisitDetail.conditionVisitDetailText_11', 'with a Place of Service located in:')"></span>
-
-						<conceptset-selector params="conceptSetId: PlaceOfServiceLocation(), conceptSets: $component.expression.ConceptSets, 
-							defaultName: ko.i18n('components.conditionVisitDetail.anyLocation', 'Any Location')"></conceptset-selector>
+						<span data-bind="text: ko.i18n('components.cohortCriteria.placeOfServiceLocationCS', 'with a place of service location concept')"></span>
+						<cycle-toggle-input params="{value: PlaceOfServiceLocationCS().IsExclusion, options: $component.options.DomainTypeExcludeOptions}"></cycle-toggle-input>
+						<conceptset-selector params="conceptSetId: PlaceOfServiceLocationCS().CodesetId, conceptSets: $component.expression.ConceptSets, 
+							defaultName: ko.i18n('components.cohortCriteria.anyPlaceOfServiceLocation', 'Any Place of Service location')"></conceptset-selector>
 					</div>
 				</td>
 			</tr>
