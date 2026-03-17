@@ -15,7 +15,7 @@ function(
 
 	function getIssues(repo, milestone, page) {
 
-		return httpService.doGet(`https://api.github.com/repos/${repo}/issues?state=closed&per_page=${ISSUES_PAGE_SIZE}&page=${page}&milestone=${milestone}`);
+		return []; //httpService.doGet(`https://api.github.com/repos/${repo}/issues?state=closed&per_page=${ISSUES_PAGE_SIZE}&page=${page}&milestone=${milestone}`);
 	}
 
 	return {
