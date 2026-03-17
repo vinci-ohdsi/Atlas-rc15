@@ -54,11 +54,11 @@ define([
 			this.atlasReleaseTag(atlasReleaseTag);
 			this.webapiReleaseTag(webapiReleaseTag);
 			this.webapiVersion(this.getWebapiVersion(info));
-			const atlasIssues = await this.getIssuesFromAllPages('OHDSI/Atlas', atlasMilestoneId);
-			const webapiIssues = await this.getIssuesFromAllPages('OHDSI/WebAPI', webapiMilestoneId);
-			let issues = lodash.orderBy([...atlasIssues, ...webapiIssues], ['closed_at'], ['desc']);
+			// const atlasIssues = await this.getIssuesFromAllPages('OHDSI/Atlas', atlasMilestoneId);
+			// const webapiIssues = await this.getIssuesFromAllPages('OHDSI/WebAPI', webapiMilestoneId);
+			// let issues = lodash.orderBy([...atlasIssues, ...webapiIssues], ['closed_at'], ['desc']);
 			// The API returns both issues and PRs and PRs in most cases would duplicate issues, therefore just leave issues
-			issues = issues.filter(item => item.html_url.includes('/issues/'));
+			let issues = []; // issues.filter(item => item.html_url.includes('/issues/'));
 			this.github_status(issues);
 		}
 
